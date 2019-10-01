@@ -1,5 +1,5 @@
 const fs = require('fs');
-fs.readdir('../', function(err,data) {
+fs.readdir('../', (err,data) => {
     console.log('data: ', data)
 });
 
