@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  {{> head }}
+  <body class="center">
+
+    <main>
+   		<nav class="nav navbar-expand navbar-dark bg-dark">
+        <ul class="navbar-nav">
+   			{{#each li}}
+				<li class="nav-item">
+          <a class="nav-link text-uppercase" href="/{{this}}">{{this}}</a>
+        </li>
+			  {{/each}}
+        </ul>
+   		</nav>
+          <h2>{{{data}}}</h2>
+    </main>
+  </body>
+  
+</html>
