@@ -10,10 +10,12 @@ const express = require("express");
 const fetch = require("node-fetch");
 const app = express();
 app.use(express.static("public"));
-var request = require("request");
+const request = require("request");
+const jsdom = require("jsdom");
 const port = 3000;
 const URL = "https://icanhazdadjoke.com";
 const nav = ["Home", "Joke1", "Joke2", "Joke3", "Joke4"];
+const bg = ["green", "red", "orange", "pink", "blue"];
 
 
 /** COMPRESSION
@@ -111,9 +113,12 @@ app.set('view engine', 'hbs');
 * 3. Route for any undefined page will send a 404 error.
 * 4. Handle errors
 */
+app.get('/', (req,res) => {
+  res.redirect("/Home");
+});
 for (var i = 0; i < nav.length; i++) {
   app.get(`/${nav[i]}`, (req,res) => {
-  get_data(URL, "index", res)
+  get_data(URL, "index", res);
 });
 }
 
